@@ -4,7 +4,7 @@ import { config } from "dotenv";
 
 const app = express();
 config();
-app.use(cors());
+// app.use(cors());
 
 function corsConfig(): void {
   const whiteList = [process.env.FRONTEND_URL];
@@ -16,7 +16,7 @@ function corsConfig(): void {
       if (whiteList.includes(origin)) {
         callback(null, true);
       } else {
-        const error = new Error("Sin acceso por política de CORS");
+        const error = new Error("Sin acceso por política de CORS ❌");
         callback(error);
       }
     },
@@ -24,7 +24,7 @@ function corsConfig(): void {
   app.use(cors(corsOptions));
 }
 
-// corsConfig();
+corsConfig();
 
 const PORT = process.env.PORT ?? 4000;
 
