@@ -24,7 +24,7 @@ function corsConfig(): void {
   app.use(cors(corsOptions));
 }
 
-corsConfig();
+// corsConfig();
 
 const PORT = process.env.PORT ?? 4000;
 
